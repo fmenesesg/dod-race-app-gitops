@@ -54,7 +54,13 @@ service:
   port: 8080
   name: http
 
-route: {}
+route:
+  enabled: true
+  annotations:
+    openshift.io/host.generated: "true"
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
 
 resources:
   requests:
