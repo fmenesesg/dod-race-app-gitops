@@ -1,0 +1,27 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dod-race-app-gitops
+  description: GitOps for DoD Race App
+  annotations:
+    github.com/project-slug: fmenesesg/dod-race-app-gitops
+    argocd/app-name: dod-race-app-dev
+    argocd/app-namespace: argocd
+    argocd/instance-name: kind-local
+  tags:
+    - gitops
+    - argocd
+    - dod-race
+  links:
+    - url: https://github.com/fmenesesg/dod-race-app-gitops
+      title: GitOps repository
+      icon: github
+    - url: https://github.com/fmenesesg/dod-race-app
+      title: Source repository
+      icon: github
+spec:
+  type: website
+  lifecycle: production
+  owner: user:default/fmenesesg
+  dependsOn:
+    - component:default/dod-race-app-dev
